@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrave - The Future Has Odds</title>
+  <meta name="description"
+    content="The only platform where traders predict outcomes, creators launch profitable markets, and liquidity providers fund the future. Choose your path to profit." />
+  <meta name="author" content="Entrave" />
+
+  <meta property="og:title" content="Entrave - The Future Has Odds" />
+  <meta property="og:description"
+    content="The only platform where traders predict outcomes, creators launch profitable markets, and liquidity providers fund the future." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image"
+    content="https://storage.googleapis.com/gpt-engineer-file-uploads/16J8EtdFVfO2uuIstjxsz3Z3WMM2/social-images/social-1760621767182-X Shared Link v01.png">
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image"
+    content="https://storage.googleapis.com/gpt-engineer-file-uploads/16J8EtdFVfO2uuIstjxsz3Z3WMM2/social-images/social-1760621767182-X Shared Link v01.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon"
+    href="https://storage.googleapis.com/gpt-engineer-file-uploads/16J8EtdFVfO2uuIstjxsz3Z3WMM2/uploads/1760555659719-favicon-96x96.png">
+  <script type="module" crossorigin src="/assets/index-DvxBwW7y.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/wagmi-core-DTeud8oQ.js">
+  <link rel="modulepreload" crossorigin href="/assets/ui-MMcbxhMf.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-DPXOSdqi.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-Dye-ybzH.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- CRITICAL: This must run BEFORE any modules load -->
+  <script>
+    (function () {
+      'use strict';
+
+      console.log('🔧 Initializing early error handlers and polyfills...');
+
+      // 1. Global error handler - MUST be first
+      window.addEventListener('error', function (event) {
+        if (event.error && event.error.message && event.error.message.includes('BigInt is not a function')) {
+          console.error('🔴 CAUGHT: BigInt error during module load');
+          console.error('Error details:', event.error);
+          event.preventDefault();
+          event.stopPropagation();
+
+          // Show user-friendly error instead of white screen
+          var root = document.getElementById('root');
+          if (root) {
+            root.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;"><div style="max-width:500px;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:24px;"><div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;"><svg style="width:24px;height:24px;color:#eab308;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><h2 style="font-size:20px;font-weight:600;margin:0;">Loading Issue Detected</h2></div><p style="color:#94a3b8;margin-bottom:20px;">A temporary compatibility issue was detected. Please refresh the page to continue.</p><button onclick="window.location.reload()" style="width:100%;padding:12px;background:#3b82f6;color:white;border:none;border-radius:6px;font-size:16px;font-weight:500;cursor:pointer;">Refresh Page</button></div></div>';
+          }
+
+          return false;
+        }
+      }, true); // Use capture phase
+
+      // 2. Promise rejection handler
+      window.addEventListener('unhandledrejection', function (event) {
+        if (event.reason && event.reason.message && event.reason.message.includes('BigInt is not a function')) {
+          console.error('🔴 CAUGHT: BigInt promise rejection');
+          event.preventDefault();
+          return false;
+        }
+      });
+
+      // 3. Buffer polyfill
+      if (typeof window.Buffer === 'undefined') {
+        window.Buffer = {
+          isBuffer: function () { return false; },
+          from: function () { return new Uint8Array(); },
+          alloc: function () { return new Uint8Array(); },
+          concat: function () { return new Uint8Array(); }
+        };
+      }
+
+      console.log('✅ Early error handlers registered');
+    })();
+  </script>
+</body>
+
+</html>
